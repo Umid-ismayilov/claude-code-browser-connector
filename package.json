@@ -1,0 +1,90 @@
+{
+  "name": "claude-code-browser-connector",
+  "version": "1.0.0",
+  "description": "Professional Puppeteer-based browser connector for Claude Code with configurable settings and comprehensive monitoring",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "claude-browser": "bin/cli.js",
+    "browser-connector": "bin/cli.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --inspect src/index.js",
+    "test": "node test/runner.js",
+    "test:aztv": "node test/aztv-test.js",
+    "test:config": "node test/config-test.js",
+    "setup": "node scripts/setup.js",
+    "config": "node scripts/config-cli.js",
+    "install-global": "npm install -g .",
+    "uninstall-global": "npm uninstall -g claude-code-browser-connector",
+    "build": "echo 'No build step required - pure Node.js'",
+    "lint": "echo 'Linting not configured'",
+    "clean": "rm -rf ~/.config/claude-code-browser-connector/logs/*",
+    "reset-config": "node scripts/reset-config.js",
+    "docker": "docker build -t claude-browser-connector .",
+    "docker:run": "docker run -p 3001:3001 -p 3002:3002 claude-browser-connector",
+    "prepublishOnly": "npm test",
+    "postinstall": "node scripts/post-install.js"
+  },
+  "keywords": [
+    "claude-code",
+    "puppeteer",
+    "browser-automation",
+    "remote-debugging",
+    "mcp",
+    "automation",
+    "testing",
+    "web-scraping",
+    "headless-browser",
+    "chrome-devtools"
+  ],
+  "author": {
+    "name": "Community Contributors",
+    "email": "claude-code-browser@community.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Umid-ismayilov/claude-code-browser-connector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Umid-ismayilov/claude-code-browser-connector/issues"
+  },
+  "homepage": "https://github.com/Umid-ismayilov/claude-code-browser-connector#readme",
+  "dependencies": {
+    "puppeteer-core": "^21.5.0",
+    "ws": "^8.14.0",
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "yargs": "^17.7.2",
+    "chalk": "^5.3.0",
+    "node-notifier": "^10.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "files": [
+    "src/",
+    "config/",
+    "bin/",
+    "scripts/",
+    "test/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "preferGlobal": true,
+  "publishConfig": {
+    "access": "public"
+  }
+}

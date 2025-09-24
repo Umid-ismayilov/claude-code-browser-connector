@@ -1,0 +1,83 @@
+{
+  "server": {
+    "port": 3001,
+    "wsPort": 3002,
+    "host": "localhost"
+  },
+  "browser": {
+    "debuggingPorts": [9222, 9223, 9224],
+    "defaultHost": "localhost",
+    "maxRetries": 3,
+    "retryDelay": 2000,
+    "userDataDir": "/tmp/claude-code-chrome"
+  },
+  "logging": {
+    "level": "info",
+    "maxConsoleLogs": 1000,
+    "maxNetworkLogs": 1000,
+    "enableRealTimeLogging": true
+  },
+  "security": {
+    "allowedOrigins": ["*"],
+    "enableCors": true,
+    "maxRequestSize": "10mb"
+  },
+  "features": {
+    "autoConnectOnStart": true,
+    "enableScreenshots": true,
+    "enableNetworkMonitoring": true,
+    "enableConsoleLogging": true,
+    "enableErrorTracking": true
+  },
+  "paths": {
+    "chromePath": {
+      "darwin": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "linux": "google-chrome",
+      "win32": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    },
+    "configDir": "~/.config/claude-code-browser-connector",
+    "logsDir": "~/.local/share/claude-code-browser-connector/logs"
+  },
+  "testSites": {
+    "demo": {
+      "url": "https://example.com/",
+      "expectedTitle": "Example Domain",
+      "timeout": 15000
+    },
+    "google": {
+      "url": "https://www.google.com",
+      "expectedTitle": "Google",
+      "searchSelector": "input[name='q']",
+      "timeout": 10000
+    },
+    "github": {
+      "url": "https://github.com",
+      "expectedTitle": "GitHub",
+      "timeout": 20000
+    }
+  },
+  "mcpConfig": {
+    "serverName": "claude-code-browser",
+    "tools": [
+      "browser_connect",
+      "browser_navigate",
+      "browser_get_page_info",
+      "browser_get_console_logs",
+      "browser_get_network_logs",
+      "browser_clear_logs",
+      "browser_click",
+      "browser_type",
+      "browser_execute",
+      "browser_screenshot",
+      "browser_status"
+    ]
+  },
+  "user": {
+    "name": "User",
+    "preferences": {
+      "autoStart": true,
+      "showNotifications": true,
+      "logLevel": "info"
+    }
+  }
+}
